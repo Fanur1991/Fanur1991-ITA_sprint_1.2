@@ -18,6 +18,7 @@ interface IToDoStrategy {
   filter(todos: ToDo[]): ToDo[];
   sort(todos: ToDo[]): ToDo[];
 }
+```typescript
 
 ### Estrategias Concretas
 
