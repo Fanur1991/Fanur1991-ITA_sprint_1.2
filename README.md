@@ -50,8 +50,19 @@ export class ToDoList {
   }
 
   getToDos(): IToDo[] {
-    let filteredAndSorted = this.strategy.sort(this.strategy.filter(this.toDoList));
+    let filteredAndSorted = this.strategy.sort(
+      this.strategy.filter(this.toDoList)
+    );
     return filteredAndSorted;
+  }
+
+  addToDo(newToDo: ToDo): ToDo {
+    this.toDoList.push(newToDo);
+    return newToDo;
+  }
+
+  removeToDo(id: string): void {
+    this.toDoList = this.toDoList.filter((toDo) => toDo.id !== id);
   }
 
   setStrategy(strategy: IToDoStrategy) {
@@ -62,8 +73,8 @@ export class ToDoList {
 
 ## Beneficios de Aplicar el Patrón Estrategia
 
-+ Flexibilidad: Me permite cambiar la forma en que se muestran las tareas sin necesidad de modificar el código principal de la lista de tareas.
-+ Extensibilidad: Facilita la adición de nuevas formas de filtrar y ordenar las tareas sin afectar otras partes del código.
+- Flexibilidad: Me permite cambiar la forma en que se muestran las tareas sin necesidad de modificar el código principal de la lista de tareas.
+- Extensibilidad: Facilita la adición de nuevas formas de filtrar y ordenar las tareas sin afectar otras partes del código.
 
 ## Conclusión
 
