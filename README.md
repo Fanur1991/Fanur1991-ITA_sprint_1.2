@@ -19,6 +19,7 @@ interface IToDoStrategy {
   filter(todos: ToDo[]): ToDo[];
   sort(todos: ToDo[]): ToDo[];
 }
+```
 
 ### Estrategias Concretas
 
@@ -34,6 +35,7 @@ class DefaultToDoStrategy implements IToDoStrategy {
     return todos.sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));
   }
 }
+```
 
 ### Integración en ToDoList
 
@@ -56,13 +58,12 @@ export class ToDoList {
     this.strategy = strategy;
   }
 }
+```
 
 ## Beneficios de Aplicar el Patrón Estrategia
 
-<ul>
-  <li>Flexibilidad: Me permite cambiar la forma en que se muestran las tareas sin necesidad de modificar el código principal de la lista de tareas.</li>
-  <li>Extensibilidad: Facilita la adición de nuevas formas de filtrar y ordenar las tareas sin afectar otras partes del código.</li>
-</ul>
++ Flexibilidad: Me permite cambiar la forma en que se muestran las tareas sin necesidad de modificar el código principal de la lista de tareas.
++ Extensibilidad: Facilita la adición de nuevas formas de filtrar y ordenar las tareas sin afectar otras partes del código.
 
 ## Conclusión
 
