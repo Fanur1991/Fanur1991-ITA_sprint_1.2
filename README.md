@@ -35,9 +35,12 @@ class DefaultToDoStrategy implements IToDoStrategy {
   }
 }
 
-<h5>Integración en ToDoList</h5>
-<p>Integraría estas estrategias en mi clase ToDoList, permitiéndome cambiar cómo se muestran las tareas en tiempo de ejecución:</p>
-<p>export class ToDoList {
+### Integración en ToDoList
+
+Integraría estas estrategias en mi clase ToDoList, permitiéndome cambiar cómo se muestran las tareas en tiempo de ejecución:
+
+```typescript
+export class ToDoList {
   private strategy: IToDoStrategy;
 
   constructor(strategy: IToDoStrategy = new DefaultToDoStrategy()) {
@@ -53,35 +56,14 @@ class DefaultToDoStrategy implements IToDoStrategy {
     this.strategy = strategy;
   }
 }
-</p>
 
-<h3>Beneficios de Aplicar el Patrón Estrategia</h3>
+## Beneficios de Aplicar el Patrón Estrategia
 
 <ul>
   <li>Flexibilidad: Me permite cambiar la forma en que se muestran las tareas sin necesidad de modificar el código principal de la lista de tareas.</li>
   <li>Extensibilidad: Facilita la adición de nuevas formas de filtrar y ordenar las tareas sin afectar otras partes del código.</li>
 </ul>
 
-<h3>Conclusión</h3>
+## Conclusión
 
-<p>Aunque aún no he implementado este patrón en mi proyecto, veo un gran potencial en su aplicación para hacer mi código más modular, flexible y fácil de expandir en el futuro. Sería una excelente manera de preparar mi proyecto para futuras mejoras y funcionalidades.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Aunque aún no he implementado este patrón en mi proyecto, veo un gran potencial en su aplicación para hacer mi código más modular, flexible y fácil de expandir en el futuro. Sería una excelente manera de preparar mi proyecto para futuras mejoras y funcionalidades.
