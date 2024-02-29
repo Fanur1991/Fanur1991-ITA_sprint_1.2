@@ -13,17 +13,19 @@ En mi aplicación ToDo List, este patrón me permitiría manejar diferentes form
 ### Interfaz de Estrategia
 
 Primero, definiría una interfaz ITodoStrategy que describiría las operaciones de filtrado y ordenación:
+
 ```typescript
 interface IToDoStrategy {
   filter(todos: ToDo[]): ToDo[];
   sort(todos: ToDo[]): ToDo[];
 }
-```typescript
 
 ### Estrategias Concretas
 
-<p>Luego, implementaría diferentes estrategias que cumplen con esta interfaz. Por ejemplo, una estrategia por defecto que no filtra las tareas y las ordena por su estado de completado:</p>
-<p>class DefaultToDoStrategy implements IToDoStrategy {
+Luego, implementaría diferentes estrategias que cumplen con esta interfaz. Por ejemplo, una estrategia por defecto que no filtra las tareas y las ordena por su estado de completado:
+
+```typescript
+class DefaultToDoStrategy implements IToDoStrategy {
   filter(todos: ToDo[]): ToDo[] {
     return todos;
   }
@@ -32,7 +34,6 @@ interface IToDoStrategy {
     return todos.sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));
   }
 }
-</p>
 
 <h5>Integración en ToDoList</h5>
 <p>Integraría estas estrategias en mi clase ToDoList, permitiéndome cambiar cómo se muestran las tareas en tiempo de ejecución:</p>
